@@ -10,9 +10,9 @@
  * @return {number}
  */
 var minPathSum = function (grid) {
-  // dp 表：行至当前 [i,j] 位置所采用的最小路径和
+  // dp 表：dp[i][j] 表示行至当前 [i,j] 位置所采用的最小路径和
   // 当前位置只能从上边和左边的位置行至
-  // dp[i][j] = min(dp[i - 1][j] + dp[i][j - 1]) + grid[i][j]
+  // dp[i][j] = min{dp[i - 1][j] + dp[i][j - 1]} + grid[i][j]
 
   if (!grid || !grid.length || !grid[0].length) return 0;
 
@@ -42,10 +42,10 @@ var minPathSum = function (grid) {
 };
 // @lc code=end
 
-/* var minPathSum = function (grid) {
-  // dp 表：行至当前 [i,j] 位置所采用的最小路径和
+var minPathSum = function (grid) {
+  // dp 表：dp[i][j] 表示行至当前 [i,j] 位置所采用的最小路径和
   // 当前位置只能从上边和左边的位置行至
-  // dp[i][j] = min(dp[i - 1][j] + dp[i][j - 1]) + grid[i][j]
+  // dp[i][j] = min{dp[i - 1][j] + dp[i][j - 1]} + grid[i][j]
 
   if (!grid || !grid.length || !grid[0].length) return 0;
 
@@ -73,4 +73,4 @@ var minPathSum = function (grid) {
   }
 
   return dp[row - 1][col - 1];
-}; */
+};
